@@ -20,6 +20,9 @@
   "dependencies": {
     "classlist-polyfill": "^1.2.0",
     "events-polyfill": "^2.1.2",
+    "formik": "^2.1.5",
+    "grommet": "^2.15.0",
+    "grommet-icons": "^4.4.0",
     "history": "^4.10.1",
     "immer": "^4.0.1",
     "mobile-detect": "^1.4.4",
@@ -35,6 +38,7 @@
     "react-inlinesvg": "^1.1.7",
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.1.2",
+    "react-toastify": "^6.0.8",
     "react-transition-group": "^4.3.0",
     "redux": "^4.0.4",
     "redux-actions": "^2.6.5",
@@ -42,7 +46,8 @@
     "redux-saga": "^1.1.1",
     "styled-components": "^4.4.0",
     "styled-minimal": "^0.9.0",
-    "tree-changes": "^0.5.1"
+    "tree-changes": "^0.5.1",
+    "yup": "^0.29.3"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
