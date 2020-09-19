@@ -1,10 +1,12 @@
-import { handleActions } from 'modules/helpers';
+import { handleActions } from '../modules/helpers';
 
-import { STATUS, ActionTypes } from 'constants/index';
+import { STATUS, ActionTypes } from '../constants/index';
 
 export const userState = {
   isAuthenticated: false,
   status: STATUS.IDLE,
+  error: null,
+  data: {},
 };
 
 export default {
@@ -13,9 +15,14 @@ export default {
       [ActionTypes.USER_LOGIN]: draft => {
         draft.status = STATUS.RUNNING;
       },
-      [ActionTypes.USER_LOGIN_SUCCESS]: draft => {
+      [ActionTypes.USER_LOGIN_FAILURE]: (draft, { payload }) => {
+        draft.status = STATUS.ERROR;
+        draft.error = payload;
+      },
+      [ActionTypes.USER_LOGIN_SUCCESS]: (draft, { payload }) => {
         draft.isAuthenticated = true;
         draft.status = STATUS.READY;
+        draft.usage = payload;
       },
       [ActionTypes.USER_LOGOUT]: draft => {
         draft.status = STATUS.RUNNING;

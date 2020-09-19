@@ -4,8 +4,8 @@
  */
 
 const config = {
-  name: 'React Redux Saga Boilerplate',
-  description: 'Boilerplate with React and Redux with Redux Saga',
+  name: 'GeoFence',
+  description: 'Geofence it',
 };
 
 export default config;

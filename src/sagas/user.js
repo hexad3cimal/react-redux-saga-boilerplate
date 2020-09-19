@@ -5,17 +5,22 @@
 
 import { all, delay, put, takeLatest } from 'redux-saga/effects';
 
-import { ActionTypes } from 'constants/index';
+import { ActionTypes } from '../constants/index';
+import { request } from '../modules/client';
 
 /**
  * Login
  */
-export function* login() {
+export function* login({ payload }) {
   try {
-    yield delay(400);
+    const user = yield request('http://localhost:8848/v1/api/auth/_', {
+      method: 'POST',
+      payload,
+    });
 
     yield put({
       type: ActionTypes.USER_LOGIN_SUCCESS,
+      payload: user.json(),
     });
   } catch (err) {
     /* istanbul ignore next */
